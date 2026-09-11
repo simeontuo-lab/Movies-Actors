@@ -29,4 +29,5 @@
   },
   "predeploy": "npm run build",
   "deploy": "gh-pages -d dist",
-  
+  "homepage": "https://simeontuo-lab.github.io/Movies-Actors/"
+}
