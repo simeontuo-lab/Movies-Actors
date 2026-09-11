@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap");
+
+:root {
+  --ink: #17252f;
+  --muted: #66737a;
+  --paper: #f7f3eb;
+  --card: #fffdf8;
+  --line: #ded8ca;
+  --coral: #e8644f;
+  --coral-dark: #b84436;
+  --teal: #1f7773;
+  --shadow: 0 18px 45px rgba(42, 37, 28, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(31, 119, 115, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 119, 115, 0.055) 1px, transparent 1px),
+    var(--paper);
+  background-size: 32px 32px;
+  font-family: "DM Sans", sans-serif;
+}
+
+main {
+  width: min(920px, calc(100% - 40px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 76px 0 96px;
+}
+
+.page-header {
+  max-width: 650px;
+  margin-bottom: 42px;
+  animation: rise-in 500ms ease both;
+}
+
+.page-header::before {
+  display: block;
+  width: 52px;
+  height: 6px;
+  margin-bottom: 22px;
+  content: "";
+  background: var(--coral);
+}
+
+.page-header h1 {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(3.4rem, 8vw, 6.8rem);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 0.92;
+}
+
+.page-header p {
+  max-width: 460px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+  max-width: 690px;
+  margin-bottom: 34px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 253, 248, 0.82);
+  box-shadow: var(--shadow);
+  animation: rise-in 500ms 80ms ease both;
+}
+
+.search-form input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  padding: 0 16px;
+  color: var(--ink);
+  background: transparent;
+  font: inherit;
+  font-size: 1rem;
+}
+
+.search-form input::placeholder {
+  color: #9a9b92;
+}
+
+button {
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(232, 100, 79, 0.35);
+  outline-offset: 3px;
+}
+
+.search-form button {
+  padding: 13px 23px;
+  color: #fffaf3;
+  background: var(--coral);
+  box-shadow: 0 5px 0 var(--coral-dark);
+}
+
+.search-form button:hover {
+  background: var(--coral-dark);
+  box-shadow: 0 3px 0 #92362c;
+  transform: translateY(2px);
+}
+
+.search-message {
+  margin: 18px 0 0;
+  color: var(--muted);
+}
+
+.error-message {
+  color: var(--coral-dark);
+  font-weight: 700;
+}
+
+.actor-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  animation: rise-in 500ms 140ms ease both;
+}
+
+.actor-list li {
+  min-width: 0;
+}
+
+.actor-list li button {
+  display: flex;
+  width: 100%;
+  min-height: 82px;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 18px 12px 12px;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+.actor-list li button:hover {
+  border-color: var(--teal);
+  box-shadow: 0 10px 24px rgba(31, 119, 115, 0.13);
+  transform: translateY(-3px);
+}
+
+.badge {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #dce8e3;
+}
+
+.actor-detail {
+  max-width: 690px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  animation: rise-in 400ms ease both;
+}
+
+.back-button {
+  margin-bottom: 30px;
+  padding: 0;
+  color: var(--teal);
+  background: transparent;
+}
+
+.back-button:hover {
+  color: var(--coral-dark);
+  transform: translateX(-3px);
+}
+
+.actor-detail .banner {
+  display: block;
+  width: min(100%, 260px);
+  height: 310px;
+  margin-bottom: 26px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #dce8e3;
+}
+
+.actor-detail h2 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+}
+
+.actor-detail p {
+  max-width: 640px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.actor-detail .detail-message {
+  color: var(--teal);
+  font-weight: 700;
+}
+
+.actor-detail .biography {
+  margin-top: 24px;
+}
+
+.actor-detail .actor-meta {
+  color: var(--teal);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.actor-detail .movies {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.movies h3 {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px 24px;
+  padding: 0;
+  margin: 0;
+  color: var(--muted);
+  list-style: none;
+}
+
+.movie-list li {
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--line);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    width: min(100% - 28px, 920px);
+    padding-top: 48px;
+  }
+
+  .page-header {
+    margin-bottom: 30px;
+  }
+
+  .page-header h1 {
+    font-size: clamp(3.2rem, 18vw, 5rem);
+  }
+
+  .search-form {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .search-form input {
+    min-height: 46px;
+  }
+
+  .actor-list {
+    grid-template-columns: 1fr;
+  }
+
+  .actor-detail {
+    padding: 22px;
+  }
+
+  .movie-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
